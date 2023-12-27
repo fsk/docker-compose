@@ -1,1 +1,23 @@
+server:
+  port: 7575
 
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:1453/docker-compose-postgres
+    username: postgres
+    password: root
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddlAuto: create-drop
+    showSql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    databasePlatform: org.hibernate.dialect.PostgreSQLDialect
+
+  data:
+    redis:
+      host: localhost
+      port: 1923
